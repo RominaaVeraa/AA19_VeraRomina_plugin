@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Digital Point</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/preguntas.css">
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Preguntas Frecuentes</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="hero-faq">
+            <div class="hero-content">
+                <h1 class="page-title">Preguntas Frecuentes</h1>
+                <p class="page-subtitle">Encuentra respuestas rápidas a las consultas más comunes</p>
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="faqSearch" placeholder="¿Qué necesitas saber?" class="search-input">
+                        <button class="search-btn" id="searchBtn">
+                            <img src="images/icons/busqueda.png" alt="Buscar" class="search-icon">
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-categories">
+            <div class="container">
+                <h2 class="section-title">Categorías</h2>
+                <div class="categories-grid">
+                    <button class="category-btn active" data-category="all">
+                        <img src="images/icons/todos.png" alt="Todas" class="category-icon">
+                        <span class="category-name">Todas</span>
+                        <span class="category-count" id="countAll">24</span>
+                    </button>
+                    <button class="category-btn" data-category="productos">
+                        <img src="images/icons/pantalla-curva.png" alt="Productos" class="category-icon">
+                        <span class="category-name">Productos</span>
+                        <span class="category-count" id="countProductos">8</span>
+                    </button>
+                    <button class="category-btn" data-category="compras">
+                        <img src="images/icons/carrito-de-compras.png" alt="Compras" class="category-icon">
+                        <span class="category-name">Compras</span>
+                        <span class="category-count" id="countCompras">6</span>
+                    </button>
+                    <button class="category-btn" data-category="envios">
+                        <img src="images/icons/envio.png" alt="Envíos" class="category-icon">
+                        <span class="category-name">Envíos</span>
+                        <span class="category-count" id="countEnvios">5</span>
+                    </button>
+                    <button class="category-btn" data-category="soporte">
+                        <img src="images/icons/soporte-tecnico.png" alt="Soporte" class="category-icon">
+                        <span class="category-name">Soporte</span>
+                        <span class="category-count" id="countSoporte">5</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-content">
+            <div class="container">
+                <div class="faq-list" id="faqList">
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Qué garantía tienen los notebooks?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Todos nuestros notebooks incluyen garantía oficial del fabricante que varía entre 12 y 36 meses según el modelo. Además, Digital Point ofrece 30 días adicionales de garantía por defectos de fabricación desde la fecha de compra.</p>
+                            <ul>
+                                <li>Garantía de fábrica: 12-36 meses</li>
+                                <li>Garantía Digital Point: 30 días adicionales</li>
+                                <li>Cobertura completa contra defectos de fabricación</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Los productos son nuevos o reacondicionados?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Todos nuestros productos son completamente nuevos, sellados de fábrica y con garantía oficial. No vendemos productos reacondicionados o usados. Cada artículo viene en su embalaje original con todos los accesorios incluidos.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Puedo ver las especificaciones técnicas completas?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Por supuesto. En cada página de producto encontrarás las especificaciones técnicas detalladas, incluyendo:</p>
+                            <ul>
+                                <li>Procesador, memoria RAM y almacenamiento</li>
+                                <li>Tarjeta gráfica y pantalla</li>
+                                <li>Conectividad y puertos disponibles</li>
+                                <li>Dimensiones, peso y autonomía de batería</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Tienen stock disponible de todos los productos mostrados?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nuestro inventario se actualiza en tiempo real. Si un producto aparece disponible en el sitio, tenemos stock inmediato. En caso de no tener stock, se mostrará claramente y podrás suscribirte para recibir notificaciones cuando esté disponible nuevamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Ofrecen actualizaciones de hardware?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos servicios de actualización de memoria RAM y almacenamiento para algunos modelos de notebooks. Este servicio se realiza en nuestro taller especializado y mantiene la garantía del equipo. Consulta disponibilidad para tu modelo específico.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Los monitores incluyen cables de conexión?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Todos los monitores incluyen el cable de alimentación. Los cables de video (HDMI, DisplayPort, USB-C) varían según el modelo - algunos los incluyen y otros se venden por separado. Esta información se especifica claramente en cada producto.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Puedo solicitar una demostración del producto?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Por supuesto. En nuestra sucursal de Av. Argentina Imaginaria 337 puedes ver y probar los productos antes de comprar. Te recomendamos llamar con anticipación para coordinar una cita y asegurar que el modelo de tu interés esté disponible para demostración.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="productos" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Hacen descuentos por compras corporativas?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos descuentos especiales para empresas, instituciones educativas y compras en volumen. Contacta a nuestro equipo comercial con los detalles de tu requerimiento para recibir una cotización personalizada con precios preferenciales.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="compras" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Qué métodos de pago aceptan?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Aceptamos múltiples formas de pago para tu comodidad:</p>
+                            <ul>
+                                <li>Tarjetas de crédito y débito (Visa, Mastercard, American Express)</li>
+                                <li>Transferencia bancaria</li>
+                                <li>Mercado Pago (incluye cuotas sin interés)</li>
+                                <li>Efectivo en sucursal</li>
+                                <li>Depósito bancario</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="compras" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Puedo pagar en cuotas sin interés?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos financiación en cuotas sin interés con tarjetas de crédito seleccionadas y través de Mercado Pago. Las opciones disponibles varían según el monto de compra y la entidad emisora de tu tarjeta. Verás las opciones disponibles al momento del checkout.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="compras" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Emiten factura A o B?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Emitimos tanto factura A como factura B según corresponda:</p>
+                            <ul>
+                                <li>Factura A: Para empresas y monotributistas inscriptos</li>
+                                <li>Factura B: Para consumidores finales</li>
+                                <li>Todas nuestras facturas son electrónicas y se envían por email</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="compras" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Los precios incluyen IVA?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, todos los precios mostrados en nuestro sitio web incluyen IVA y otros impuestos aplicables. No hay costos ocultos. El precio que ves es el precio final que pagarás (excepto costos de envío que se calculan según destino).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="compras" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Puedo cancelar mi pedido después de confirmarlo?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Puedes cancelar tu pedido sin costo siempre que no haya sido despachado desde nuestro depósito. Una vez que el pedido está en camino, aplican las políticas de devolución estándar. Te notificamos por email cuando tu pedido es despachado.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="compras" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Puedo modificar la dirección de entrega después de comprar?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Puedes modificar la dirección de entrega contactándonos antes de que el pedido sea despachado. Una vez que el envío está en tránsito, los cambios de dirección pueden generar costos adicionales y demoras. Te recomendamos verificar cuidadosamente la dirección antes de confirmar la compra.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="envios" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Cuánto demora la entrega?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Los tiempos de entrega dependen de tu ubicación y el método de envío elegido:</p>
+                            <ul>
+                                <li><strong>Envío Standard:</strong> 3-5 días hábiles</li>
+                                <li><strong>Envío Express:</strong> 24-48 horas</li>
+                                <li><strong>Retiro en sucursal:</strong> 2-3 días para preparación</li>
+                            </ul>
+                            <p>Los tiempos se cuentan desde la confirmación del pago.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="envios" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Cuánto cuesta el envío?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Los costos de envío varían según destino y peso:</p>
+                            <ul>
+                                <li><strong>Envío Standard:</strong> Desde $2.500</li>
+                                <li><strong>Envío Express:</strong> Desde $4.500</li>
+                                <li><strong>Retiro en sucursal:</strong> Gratis</li>
+                            </ul>
+                            <p>El costo exacto se calcula automáticamente al ingresar tu código postal en el checkout.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="envios" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Hacen envíos a todo el país?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, realizamos envíos a todo el territorio argentino a través de empresas de transporte confiables. Para algunas localidades remotas, los tiempos de entrega pueden extenderse. Verificamos la cobertura al ingresar tu código postal durante la compra.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="envios" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Puedo rastrear mi pedido?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Por supuesto. Una vez despachado tu pedido, recibirás un email con el número de seguimiento y enlace para rastrear tu envío en tiempo real. También puedes consultar el estado en tu cuenta de usuario en nuestro sitio web.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="envios" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Qué pasa si no estoy en casa al momento de la entrega?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Si no estás disponible, la empresa de transporte:</p>
+                            <ul>
+                                <li>Dejará un aviso de visita con instrucciones</li>
+                                <li>Intentará la entrega al día siguiente</li>
+                                <li>Mantendrá el paquete en depósito por hasta 5 días hábiles</li>
+                                <li>Te contactaremos para coordinar una nueva entrega</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="soporte" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Ofrecen soporte técnico post-venta?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos soporte técnico completo para todos nuestros productos:</p>
+                            <ul>
+                                <li>Configuración inicial y primeros pasos</li>
+                                <li>Resolución de problemas técnicos</li>
+                                <li>Instalación de drivers y software</li>
+                                <li>Asesoramiento sobre uso y mantenimiento</li>
+                            </ul>
+                            <p>Puedes contactarnos por teléfono, email o visitando nuestra sucursal.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="soporte" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Cómo hago un reclamo de garantía?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para hacer un reclamo de garantía:</p>
+                            <ol>
+                                <li>Contacta nuestro servicio técnico por teléfono o email</li>
+                                <li>Describe el problema y proporciona el número de orden</li>
+                                <li>Te guiaremos en los pasos de diagnóstico inicial</li>
+                                <li>Si es necesario, coordinaremos la recepción del equipo</li>
+                                <li>Evaluaremos el problema y aplicaremos la garantía correspondiente</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="soporte" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Realizan reparaciones fuera de garantía?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, tenemos un servicio técnico especializado para reparaciones fuera de garantía. Ofrecemos diagnóstico gratuito y presupuesto sin compromiso. Trabajamos con repuestos originales y técnicos certificados para garantizar la calidad de la reparación.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="soporte" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Tienen servicio de limpieza y mantenimiento preventivo?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos servicios de mantenimiento preventivo que incluyen:</p>
+                            <ul>
+                                <li>Limpieza interna de polvo y suciedad</li>
+                                <li>Cambio de pasta térmica</li>
+                                <li>Optimización de software</li>
+                                <li>Verificación de componentes</li>
+                            </ul>
+                            <p>Este servicio ayuda a mantener el rendimiento y extender la vida útil de tu equipo.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="soporte" data-aos="fade-up">
+                        <div class="faq-question">
+                            <h3>¿Puedo devolver un producto si no estoy conforme?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, aceptamos devoluciones dentro de los 30 días posteriores a la entrega, siempre que:</p>
+                            <ul>
+                                <li>El producto esté en perfecto estado y embalaje original</li>
+                                <li>Incluya todos los accesorios y documentación</li>
+                                <li>No presente signos de uso o daño</li>
+                                <li>Tengas el comprobante de compra</li>
+                            </ul>
+                            <p>Los productos personalizados o software abierto no son retornables.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-content">
+                        <img src="images/icons/error.png" alt="Sin resultados" class="no-results-icon">
+                        <h3>No encontramos resultados</h3>
+                        <p>No hay preguntas que coincidan con tu búsqueda. Intenta con otros términos o contacta nuestro soporte.</p>
+                        <button class="contact-btn" onclick="window.location.href='contacto.html'">Contactar Soporte</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-component"></div>
+
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/pages/preguntas.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>
