@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Digital Point</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/checkout.css">
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span class="breadcrumb-separator">></span>
+            <a href="comprar.html">Carrito</a>
+            <span class="breadcrumb-separator">></span>
+            <span class="breadcrumb-current">Checkout</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="title-decoration"></span>
+                    Checkout
+                    <span class="title-decoration"></span>
+                </h1>
+                <div class="cart-steps">
+                    <div class="step completed">
+                        <div class="step-number">
+                            <img src="images/icons/carrito-de-compras.png" alt="Completado" class="step-icon">
+                        </div>
+                        <span>Carrito</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step active">
+                        <div class="step-number">2</div>
+                        <span>Checkout</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span>Pago</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-container">
+                <div class="checkout-form-section">
+                    <form id="checkoutForm" class="checkout-form">
+                        <div class="form-section">
+                            <h2 class="section-title">
+                                <img src="images/icons/correo.png" alt="Email" class="section-icon">
+                                Información de Contacto
+                            </h2>
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    Email <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    class="form-input" 
+                                    placeholder="tu@email.com" 
+                                    autocomplete="email"
+                                    aria-label="Correo electrónico"
+                                    required 
+                                    readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2 class="section-title">
+                                <img src="images/icons/envio.png" alt="Envío" class="section-icon">
+                                Dirección de Envío
+                            </h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">
+                                        Nombre <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="firstName" 
+                                        name="firstName" 
+                                        class="form-input" 
+                                        placeholder="Juan" 
+                                        autocomplete="given-name"
+                                        aria-label="Nombre"
+                                        required 
+                                        readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">
+                                        Apellido <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="lastName" 
+                                        name="lastName" 
+                                        class="form-input" 
+                                        placeholder="Pérez" 
+                                        autocomplete="family-name"
+                                        aria-label="Apellido"
+                                        required 
+                                        readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address" class="form-label">
+                                    Dirección <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="address" 
+                                    name="address" 
+                                    class="form-input" 
+                                    placeholder="Calle y número" 
+                                    autocomplete="address-line1"
+                                    aria-label="Dirección"
+                                    required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city" class="form-label">
+                                        Ciudad <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="city" 
+                                        name="city" 
+                                        class="form-input" 
+                                        placeholder="Posadas" 
+                                        autocomplete="address-level2"
+                                        aria-label="Ciudad"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postalCode" class="form-label">
+                                        Código Postal <span class="required">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="postalCode" 
+                                        name="postalCode" 
+                                        class="form-input" 
+                                        placeholder="3300" 
+                                        autocomplete="postal-code"
+                                        aria-label="Código postal"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="province" class="form-label">
+                                        Provincia <span class="required">*</span>
+                                    </label>
+                                    <select 
+                                        id="province" 
+                                        name="province" 
+                                        class="form-select" 
+                                        autocomplete="address-level1"
+                                        aria-label="Provincia"
+                                        required>
+                                        <option value="">Seleccione su provincia</option>
+                                        <option value="Buenos Aires">Buenos Aires</option>
+                                        <option value="Catamarca">Catamarca</option>
+                                        <option value="Chaco">Chaco</option>
+                                        <option value="Chubut">Chubut</option>
+                                        <option value="Córdoba">Córdoba</option>
+                                        <option value="Corrientes">Corrientes</option>
+                                        <option value="Entre Ríos">Entre Ríos</option>
+                                        <option value="Formosa">Formosa</option>
+                                        <option value="Jujuy">Jujuy</option>
+                                        <option value="La Pampa">La Pampa</option>
+                                        <option value="La Rioja">La Rioja</option>
+                                        <option value="Mendoza">Mendoza</option>
+                                        <option value="Misiones" selected>Misiones</option>
+                                        <option value="Neuquén">Neuquén</option>
+                                        <option value="Río Negro">Río Negro</option>
+                                        <option value="Salta">Salta</option>
+                                        <option value="San Juan">San Juan</option>
+                                        <option value="San Luis">San Luis</option>
+                                        <option value="Santa Cruz">Santa Cruz</option>
+                                        <option value="Santa Fe">Santa Fe</option>
+                                        <option value="Santiago del Estero">Santiago del Estero</option>
+                                        <option value="Tierra del Fuego">Tierra del Fuego</option>
+                                        <option value="Tucumán">Tucumán</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country" class="form-label">
+                                        País
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="country" 
+                                        name="country" 
+                                        value="Argentina" 
+                                        class="form-input" 
+                                        autocomplete="country-name"
+                                        aria-label="País"
+                                        readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">
+                                    Teléfono <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    class="form-input" 
+                                    placeholder="+54 376 154-0708" 
+                                    autocomplete="tel"
+                                    aria-label="Número de teléfono"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2 class="section-title">
+                                <img src="images/icons/envio.png" alt="Envío" class="section-icon">
+                                Método de Envío
+                            </h2>
+                            
+                            <div class="shipping-options">
+                                <div class="shipping-option">
+                                    <input 
+                                        type="radio" 
+                                        id="shipping-standard" 
+                                        name="shipping" 
+                                        value="standard" 
+                                        checked
+                                        aria-labelledby="label-shipping-standard">
+                                    <label id="label-shipping-standard" for="shipping-standard" class="visually-hidden">Envío Estándar</label>
+                                    <div class="option-content" data-for="shipping-standard">
+                                        <div class="option-header">
+                                            <span class="option-title">Envío Estándar</span>
+                                            <span class="option-price" id="standardShippingPrice">$15.000</span>
+                                        </div>
+                                        <p class="option-description">Entrega en 5-7 días hábiles</p>
+                                    </div>
+                                </div>
+
+                                <div class="shipping-option">
+                                    <input 
+                                        type="radio" 
+                                        id="shipping-express" 
+                                        name="shipping" 
+                                        value="express"
+                                        aria-labelledby="label-shipping-express">
+                                    <label id="label-shipping-express" for="shipping-express" class="visually-hidden">Envío Express</label>
+                                    <div class="option-content" data-for="shipping-express">
+                                        <div class="option-header">
+                                            <span class="option-title">Envío Express</span>
+                                            <span class="option-price">$25.000</span>
+                                        </div>
+                                        <p class="option-description">Entrega en 2-3 días hábiles</p>
+                                    </div>
+                                </div>
+
+                                <div class="shipping-option">
+                                    <input 
+                                        type="radio" 
+                                        id="shipping-pickup" 
+                                        name="shipping" 
+                                        value="pickup"
+                                        aria-labelledby="label-shipping-pickup">
+                                    <label id="label-shipping-pickup" for="shipping-pickup" class="visually-hidden">Retiro en Local</label>
+                                    <div class="option-content" data-for="shipping-pickup">
+                                        <div class="option-header">
+                                            <span class="option-title">Retiro en Local</span>
+                                            <span class="option-price free">GRATIS</span>
+                                        </div>
+                                        <p class="option-description">Av. Imaginaria 337, Posadas, Misiones</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button 
+                                type="button" 
+                                class="btn-secondary" 
+                                onclick="window.location.href='comprar.html'"
+                                aria-label="Volver al carrito">
+                                <span class="btn-arrow">←</span>
+                                <span>Volver al Carrito</span>
+                            </button>
+                            <button 
+                                type="submit" 
+                                class="btn-primary"
+                                aria-label="Continuar al pago">
+                                <span>Continuar al Pago</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="order-summary-sidebar">
+                    <div class="summary-card">
+                        <h3 class="summary-title">Resumen del Pedido</h3>
+                        
+                        <div class="order-items" id="orderItems" role="region" aria-label="Lista de productos"></div>
+
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal (<span id="itemCount">0</span> productos):</span>
+                                <span id="subtotal">$0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Envío:</span>
+                                <span id="shipping">$0</span>
+                            </div>
+                            <div class="summary-row discount-row" id="discountRow" style="display: none;">
+                                <span>Descuento:</span>
+                                <span id="discount" class="discount-amount">-$0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Impuestos (21% IVA):</span>
+                                <span id="taxes">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Total:</span>
+                            <span id="total">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-component"></div>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Volver arriba">
+        <span>↑</span>
+    </button>
+
+    <div id="toastContainer" class="toast-container" role="region" aria-live="polite"></div>
+
+    <script>
+      document.querySelectorAll('.option-content[data-for]').forEach(box=>{
+        box.addEventListener('click',()=>{
+          const id=box.getAttribute('data-for');
+          const radio=document.getElementById(id);
+          if(radio){radio.checked=true;radio.dispatchEvent(new Event('change',{bubbles:true}));}
+        });
+      });
+    </script>
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/pages/checkout.js"></script>
+    <script src="js/pages/login.js"></script>
+    <script src="js/components.js"></script>
+    <div class="menu-overlay"></div>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Pago - Digital Point</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/proceso_pago.css">
+    <style>
+        .payment-label {
+          position: absolute !important;
+          width: 1px; height: 1px;
+          padding: 0; margin: -1px;
+          overflow: hidden; clip: rect(0,0,0,0);
+          white-space: nowrap; border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span class="breadcrumb-separator">></span>
+            <a href="comprar.html">Carrito</a>
+            <span class="breadcrumb-separator">></span>
+            <a href="checkout.html">Checkout</a>
+            <span class="breadcrumb-separator">></span>
+            <span class="breadcrumb-current">Proceso de Pago</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    <span class="title-decoration"></span>
+                    Proceso de Pago
+                    <span class="title-decoration"></span>
+                </h1>
+                <div class="cart-steps">
+                    <div class="step completed">
+                        <div class="step-number">
+                            <img src="images/icons/carrito-de-compras.png" alt="Completado" class="step-icon">
+                        </div>
+                        <span>Carrito</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step completed">
+                        <div class="step-number">
+                            <img src="images/icons/checklist.png" alt="Completado" class="step-icon">
+                        </div>
+                        <span>Checkout</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step active">
+                        <div class="step-number">3</div>
+                        <span>Pago</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-container">
+                <div class="payment-methods-section">
+                    <div class="payment-card">
+                        <h2 class="section-title">
+                            <img src="images/icons/tarjeta-de-credito.png" alt="Pago" class="section-icon">
+                            Método de Pago
+                        </h2>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input 
+                                    type="radio" 
+                                    id="payment-credit-card" 
+                                    name="payment" 
+                                    value="credit_card" 
+                                    checked
+                                    aria-labelledby="label-payment-credit-card">
+                                <label for="payment-credit-card" id="label-payment-credit-card" class="payment-label">Tarjeta de Crédito/Débito</label>
+                                <div class="payment-content" data-for="payment-credit-card" aria-labelledby="label-payment-credit-card">
+                                    <div class="payment-header">
+                                        <span class="payment-name">Tarjeta de Crédito/Débito</span>
+                                        <div class="payment-icons">
+                                            <img src="images/icons/visa.png" alt="Visa" class="payment-icon-img">
+                                            <img src="images/icons/card.png" alt="Mastercard" class="payment-icon-img">
+                                            <img src="images/icons/amex.png" alt="Amex" class="payment-icon-img">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="payment-description-wrapper">
+                                    <p class="payment-description">Pago seguro con tarjeta Visa, Mastercard, American Express</p>
+                                    <div class="credit-card-form">
+                                        <div class="form-group">
+                                            <label for="cardNumber" class="form-label">
+                                                Número de Tarjeta <span class="required">*</span>
+                                            </label>
+                                            <input 
+                                                type="text" 
+                                                id="cardNumber" 
+                                                name="cardNumber"
+                                                class="form-input" 
+                                                placeholder="1234 5678 9012 3456" 
+                                                autocomplete="cc-number"
+                                                aria-label="Número de tarjeta de crédito"
+                                                maxlength="19" 
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cardName" class="form-label">
+                                                Nombre en la Tarjeta <span class="required">*</span>
+                                            </label>
+                                            <input 
+                                                type="text" 
+                                                id="cardName" 
+                                                name="cardName"
+                                                class="form-input" 
+                                                placeholder="JUAN PÉREZ" 
+                                                autocomplete="cc-name"
+                                                aria-label="Nombre como aparece en la tarjeta"
+                                                required>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="expiryDate" class="form-label">
+                                                    Fecha de Vencimiento <span class="required">*</span>
+                                                </label>
+                                                <input 
+                                                    type="text" 
+                                                    id="expiryDate" 
+                                                    name="expiryDate"
+                                                    class="form-input" 
+                                                    placeholder="MM/AA" 
+                                                    autocomplete="cc-exp"
+                                                    aria-label="Fecha de vencimiento de la tarjeta"
+                                                    maxlength="5" 
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cvv" class="form-label">
+                                                    CVV <span class="required">*</span>
+                                                </label>
+                                                <input 
+                                                    type="text" 
+                                                    id="cvv" 
+                                                    name="cvv"
+                                                    class="form-input" 
+                                                    placeholder="123" 
+                                                    autocomplete="cc-csc"
+                                                    aria-label="Código de seguridad CVV"
+                                                    maxlength="4" 
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="payment-method">
+                                <input 
+                                    type="radio" 
+                                    id="payment-transfer" 
+                                    name="payment" 
+                                    value="transfer"
+                                    aria-labelledby="label-payment-transfer">
+                                <label for="payment-transfer" id="label-payment-transfer" class="payment-label">Transferencia Bancaria</label>
+                                <div class="payment-content" data-for="payment-transfer" aria-labelledby="label-payment-transfer">
+                                    <div class="payment-header">
+                                        <span class="payment-name">Transferencia Bancaria</span>
+                                        <div class="payment-icons">
+                                            <img src="images/icons/banco.png" alt="Banco" class="payment-icon-img">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="payment-description-wrapper">
+                                    <p class="payment-description">Realiza una transferencia a nuestra cuenta bancaria</p>
+                                    <div class="transfer-info">
+                                        <div class="info-box">
+                                            <div class="info-title">
+                                                <img src="images/icons/cifrado-de-datos.png" alt="Info" class="info-title-icon">
+                                                Datos para Transferencia
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">Banco:</span>
+                                                <span class="info-value">Banco Digital Argentina</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">Titular:</span>
+                                                <span class="info-value">Digital Point S.A.</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">CBU:</span>
+                                                <span class="info-value">
+                                                    0123456789012345678901
+                                                    <button 
+                                                        type="button" 
+                                                        class="copy-btn" 
+                                                        data-copy="0123456789012345678901"
+                                                        aria-label="Copiar CBU">
+                                                        Copiar
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">Alias:</span>
+                                                <span class="info-value">
+                                                    DIGITAL.POINT.ARG
+                                                    <button 
+                                                        type="button" 
+                                                        class="copy-btn" 
+                                                        data-copy="DIGITAL.POINT.ARG"
+                                                        aria-label="Copiar alias">
+                                                        Copiar
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">CUIT:</span>
+                                                <span class="info-value">30-71234567-8</span>
+                                            </div>
+                                        </div>
+                                        <p class="info-note">
+                                            Una vez realizada la transferencia, envía el comprobante a digitalpoint@gmail.com con tu número de orden.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="payment-method">
+                                <input 
+                                    type="radio" 
+                                    id="payment-cash" 
+                                    name="payment" 
+                                    value="cash"
+                                    aria-labelledby="label-payment-cash">
+                                <label for="payment-cash" id="label-payment-cash" class="payment-label">Efectivo en Local</label>
+                                <div class="payment-content" data-for="payment-cash" aria-labelledby="label-payment-cash">
+                                    <div class="payment-header">
+                                        <span class="payment-name">Efectivo en Local</span>
+                                        <div class="payment-icons">
+                                            <img src="images/icons/efectivo.png" alt="Efectivo" class="payment-icon-img">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="payment-description-wrapper">
+                                    <p class="payment-description">Paga en efectivo al retirar tu pedido</p>
+                                    <div class="cash-info">
+                                        <div class="info-box">
+                                            <div class="info-title">
+                                                <img src="images/icons/ubicacion.png" alt="Ubicación" class="info-title-icon">
+                                                Dirección del Local
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">Dirección:</span>
+                                                <span class="info-value">Av. Imaginaria 337</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">Ciudad:</span>
+                                                <span class="info-value">Posadas, Misiones</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">Horario:</span>
+                                                <span class="info-value">Lun-Sáb: 9:00-20:00</span>
+                                            </div>
+                                            <div class="info-item">
+                                                <span class="info-label">Teléfono:</span>
+                                                <span class="info-value">+54 376 154-0708</span>
+                                            </div>
+                                        </div>
+                                        <p class="info-note">
+                                            Tu pedido estará reservado por 48 horas. Por favor, trae tu número de orden al retirar.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="payment-card shipping-info-card">
+                        <h2 class="section-title">
+                            <img src="images/icons/envio.png" alt="Envío" class="section-icon">
+                            Información de Envío
+                        </h2>
+                        
+                        <div id="shippingInfoDetails" role="region" aria-label="Información de envío"></div>
+                    </div>
+                </div>
+
+                <div class="order-summary-sidebar">
+                    <div class="summary-card">
+                        <h3 class="summary-title">Resumen del Pedido</h3>
+                        
+                        <div 
+                            id="orderItemsSummary" 
+                            role="region" 
+                            aria-label="Productos del pedido"
+                            style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 2px solid rgba(85, 85, 85, 0.3);">
+                        </div>
+
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotalAmount">$0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Envío:</span>
+                                <span id="shippingAmount">$0</span>
+                            </div>
+                            <div class="summary-row discount-row" id="discountRow" style="display: none;">
+                                <span>Descuento:</span>
+                                <span id="discountAmount" class="discount-amount">-$0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Impuestos (21% IVA):</span>
+                                <span id="taxesAmount">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Total:</span>
+                            <span id="totalAmount">$0</span>
+                        </div>
+
+                        <div class="payment-actions">
+                            <button 
+                                type="button" 
+                                class="btn-primary" 
+                                id="placeOrderBtn"
+                                aria-label="Confirmar y realizar el pago">
+                                <span>Confirmar y Pagar</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                            <button 
+                                type="button" 
+                                class="btn-secondary" 
+                                onclick="window.location.href='checkout.html'"
+                                aria-label="Volver al checkout">
+                                <span class="btn-arrow">←</span>
+                                <span>Volver</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="confirmationModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <img src="images/icons/checklist.png" alt="Confirmado" class="modal-icon-img">
+            </div>
+            <h2 id="modalTitle" class="modal-title">¡Pedido Confirmado!</h2>
+            <p class="modal-message">Tu pedido ha sido procesado exitosamente</p>
+            
+            <div class="modal-order-info">
+                <div class="modal-order-number">
+                    <div class="modal-label">Número de Orden:</div>
+                    <strong id="modalOrderNumber"></strong>
+                </div>
+                
+                <div class="modal-order-details" id="modalOrderDetails"></div>
+                
+                <div class="modal-totals">
+                    <div class="modal-total-row">
+                        <span>Subtotal:</span>
+                        <span id="modalSubtotal">$0</span>
+                    </div>
+                    <div class="modal-total-row">
+                        <span>Envío:</span>
+                        <span id="modalShipping">$0</span>
+                    </div>
+                    <div class="modal-total-row" id="modalDiscountRow" style="display: none;">
+                        <span>Descuento:</span>
+                        <span id="modalDiscount" style="color: #4ade80;">-$0</span>
+                    </div>
+                    <div class="modal-total-row">
+                        <span>Impuestos:</span>
+                        <span id="modalTaxes">$0</span>
+                    </div>
+                    <div class="modal-total-row modal-total-final">
+                        <span>Total:</span>
+                        <span id="modalTotal">$0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="modal-email-note">Recibirás un email de confirmación con los detalles de tu pedido</p>
+            
+            <div class="modal-actions">
+                <button 
+                    type="button" 
+                    class="modal-btn modal-btn-primary" 
+                    onclick="window.location.href='index.html'"
+                    aria-label="Volver a la página de inicio">
+                    Volver al Inicio
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-component"></div>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Volver arriba">
+        <span>↑</span>
+    </button>
+
+    <div id="toastContainer" class="toast-container" role="region" aria-live="polite"></div>
+
+    <script>
+      document.querySelectorAll('.payment-content[data-for]').forEach(box => {
+        box.addEventListener('click', () => {
+          const id = box.getAttribute('data-for');
+          const radio = document.getElementById(id);
+          if (radio) {
+            radio.checked = true;
+            radio.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
+      });
+    </script>
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/pages/proceso_pago.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

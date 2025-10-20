@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas Especiales - Digital Point</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/ofertas.css">
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <section class="offers-hero">
+        <div class="hero-background-slider">
+            <div class="background-slide active"></div>
+            <div class="background-slide"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="offer-badge">
+                <span class="offer-text">OFERTAS ESPECIALES</span>
+                <div class="badge-glow"></div>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">HASTA</span>
+                <span class="title-line gradient-text">40% OFF</span>
+                <span class="title-line">EN PRODUCTOS SELECCIONADOS</span>
+            </h1>
+            <p class="hero-subtitle">Aprovechá estos precios únicos por tiempo limitado</p>
+            <div class="countdown-timer">
+                <div class="timer-item">
+                    <span class="timer-number" id="days">03</span>
+                    <span class="timer-label">DÍAS</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="hours">12</span>
+                    <span class="timer-label">HORAS</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="minutes">45</span>
+                    <span class="timer-label">MINUTOS</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="seconds">23</span>
+                    <span class="timer-label">SEGUNDOS</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="floating-elements">
+            <div class="floating-element" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="floating-element" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
+            <div class="floating-element" style="bottom: 30%; left: 20%; animation-delay: 4s;"></div>
+        </div>
+    </section>
+
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-header">
+                <h2>Filtrar Ofertas</h2>
+                <span class="offers-count" id="offers-count">6 ofertas disponibles</span>
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-category="all">Todas las Ofertas</button>
+                <button class="filter-tab" data-category="notebooks">Notebooks</button>
+                <button class="filter-tab" data-category="monitors">Monitores</button>
+                <button class="filter-tab" data-category="gaming">Gaming</button>
+                <button class="filter-tab" data-category="office">Oficina</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-offers">
+        <div class="container">
+            <div class="offers-grid" id="offers-grid">
+
+                <div class="offer-card" data-category="notebooks office" data-id="notebook1">
+                    <div class="offer-badge-card">
+                        <span class="discount-percent">20% OFF</span>
+                    </div>
+                    <div class="offer-image">
+                        <img src="images/Notebook/notebook1.png" alt="MSI Modern 15 A11">
+                        <div class="offer-overlay">
+                            <button class="quick-view-btn" onclick="window.location.href='ficha_producto.html?id=notebook1'">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-info">
+                        <h3 class="offer-title">MSI Modern 15 A11</h3>
+                        <div class="offer-specs">
+                            <span>Intel i5 • 8GB RAM • SSD 256GB</span>
+                        </div>
+                        <div class="offer-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-count">(42 reseñas)</span>
+                        </div>
+                        <div class="offer-prices">
+                            <span class="original-price">$89.999</span>
+                            <span class="offer-price">$71.999</span>
+                        </div>
+                        <div class="offer-actions">
+                            <button class="add-to-cart-offer" onclick="addToCartOffer('notebook1')">
+                                <img src="images/icons/carrito-de-compras.png" alt="Carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card" data-category="notebooks gaming" data-id="notebook6">
+                    <div class="offer-badge-card gaming">
+                        <span class="discount-percent">15% OFF</span>
+                    </div>
+                    <div class="offer-image">
+                        <img src="images/Notebook/notebook6.png" alt="MSI GF63 Thin">
+                        <div class="offer-overlay">
+                            <button class="quick-view-btn" onclick="window.location.href='ficha_producto.html?id=notebook6'">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-info">
+                        <h3 class="offer-title">MSI GF63 Thin</h3>
+                        <div class="offer-specs">
+                            <span>Intel i7 • GTX 1650 • 16GB RAM</span>
+                        </div>
+                        <div class="offer-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-count">(67 reseñas)</span>
+                        </div>
+                        <div class="offer-prices">
+                            <span class="original-price">$179.999</span>
+                            <span class="offer-price">$152.999</span>
+                        </div>
+                        <div class="offer-actions">
+                            <button class="add-to-cart-offer" onclick="addToCartOffer('notebook6')">
+                                <img src="images/icons/carrito-de-compras.png" alt="Carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card featured" data-category="notebooks gaming" data-id="notebook10">
+                    <div class="offer-badge-card featured">
+                        <span class="discount-percent">25% OFF</span>
+                        <div class="featured-label">DESTACADA</div>
+                    </div>
+                    <div class="offer-image">
+                        <img src="images/Notebook/notebook10.png" alt="MSI Pulse 15">
+                        <div class="offer-overlay">
+                            <button class="quick-view-btn" onclick="window.location.href='ficha_producto.html?id=notebook10'">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-info">
+                        <h3 class="offer-title">MSI Pulse 15</h3>
+                        <div class="offer-specs">
+                            <span>Intel i7 • RTX 3060 • 16GB RAM</span>
+                        </div>
+                        <div class="offer-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-count">(89 reseñas)</span>
+                        </div>
+                        <div class="offer-prices">
+                            <span class="original-price">$199.999</span>
+                            <span class="offer-price">$149.999</span>
+                        </div>
+                        <div class="offer-actions">
+                            <button class="add-to-cart-offer" onclick="addToCartOffer('notebook10')">
+                                <img src="images/icons/carrito-de-compras.png" alt="Carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card" data-category="monitors gaming" data-id="monitor1">
+                    <div class="offer-badge-card">
+                        <span class="discount-percent">30% OFF</span>
+                    </div>
+                    <div class="offer-image">
+                        <img src="images/Monitores/monitor1.png" alt="MSI Optix G27C7">
+                        <div class="offer-overlay">
+                            <button class="quick-view-btn" onclick="window.location.href='ficha_producto.html?id=monitor1'">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-info">
+                        <h3 class="offer-title">MSI Optix G27C7 27" 240Hz</h3>
+                        <div class="offer-specs">
+                            <span>QHD • 240Hz • Curvo • Gaming</span>
+                        </div>
+                        <div class="offer-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-count">(124 reseñas)</span>
+                        </div>
+                        <div class="offer-prices">
+                            <span class="original-price">$89.999</span>
+                            <span class="offer-price">$62.999</span>
+                        </div>
+                        <div class="offer-actions">
+                            <button class="add-to-cart-offer" onclick="addToCartOffer('monitor1')">
+                                <img src="images/icons/carrito-de-compras.png" alt="Carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card" data-category="monitors office" data-id="monitor4">
+                    <div class="offer-badge-card">
+                        <span class="discount-percent">18% OFF</span>
+                    </div>
+                    <div class="offer-image">
+                        <img src="images/Monitores/monitor4.png" alt="MSI Modern MD272Q">
+                        <div class="offer-overlay">
+                            <button class="quick-view-btn" onclick="window.location.href='ficha_producto.html?id=monitor4'">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-info">
+                        <h3 class="offer-title">MSI Modern MD272Q 27" 4K</h3>
+                        <div class="offer-specs">
+                            <span>4K UHD • IPS • USB-C • Oficina</span>
+                        </div>
+                        <div class="offer-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-count">(78 reseñas)</span>
+                        </div>
+                        <div class="offer-prices">
+                            <span class="original-price">$179.999</span>
+                            <span class="offer-price">$147.599</span>
+                        </div>
+                        <div class="offer-actions">
+                            <button class="add-to-cart-offer" onclick="addToCartOffer('monitor4')">
+                                <img src="images/icons/carrito-de-compras.png" alt="Carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card" data-category="monitors gaming" data-id="monitor5">
+                    <div class="offer-badge-card hot">
+                        <span class="discount-percent">35% OFF</span>
+                        <div class="hot-label">¡HOT!</div>
+                    </div>
+                    <div class="offer-image">
+                        <img src="images/Monitores/monitor5.png" alt="MSI G24C4">
+                        <div class="offer-overlay">
+                            <button class="quick-view-btn" onclick="window.location.href='ficha_producto.html?id=monitor5'">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-info">
+                        <h3 class="offer-title">MSI G24C4 24" 144Hz Gaming</h3>
+                        <div class="offer-specs">
+                            <span>144Hz • IPS • Curvo • Gaming</span>
+                        </div>
+                        <div class="offer-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-count">(156 reseñas)</span>
+                        </div>
+                        <div class="offer-prices">
+                            <span class="original-price">$64.999</span>
+                            <span class="offer-price">$42.249</span>
+                        </div>
+                        <div class="offer-actions">
+                            <button class="add-to-cart-offer" onclick="addToCartOffer('monitor5')">
+                                <img src="images/icons/carrito-de-compras.png" alt="Carrito">
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-component"></div>
+
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/pages/ofertas.js"></script>
+    <script src="js/components.js"></script>
+    
+</body>
+</html>

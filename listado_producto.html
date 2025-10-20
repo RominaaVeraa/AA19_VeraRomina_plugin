@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Point - Listado de Productos</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/listado_producto.css">
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> > <span>Productos</span>
+            </div>
+
+            <h1 class="section-title">
+                <span class="title-decoration" aria-hidden="true"></span>
+                <span>Catálogo de Productos</span>
+                <span class="title-decoration" aria-hidden="true"></span>
+            </h1>
+
+            <div class="filters-section">
+                <div class="filter-categories">
+                    <button class="filter-btn active" data-category="all" onclick="filterByCategory('all')">Todos</button>
+                    <button class="filter-btn" data-category="Gaming" onclick="filterByCategory('Gaming')">Gaming</button>
+                    <button class="filter-btn" data-category="Profesionales" onclick="filterByCategory('Profesionales')">Profesionales</button>
+                    <button class="filter-btn" data-category="Estudiantes" onclick="filterByCategory('Estudiantes')">Estudiantes</button>
+                    <button class="filter-btn" data-category="Uso Diario" onclick="filterByCategory('Uso Diario')">Uso Diario</button>
+                    <button class="filter-btn" data-category="Oficina" onclick="filterByCategory('Oficina')">Oficina</button>
+                    <button class="filter-btn" data-category="4K" onclick="filterByCategory('4K')">4K</button>
+                    <button class="filter-btn" data-category="Curvos" onclick="filterByCategory('Curvos')">Curvos</button>
+                </div>
+                <div class="results-info">
+                    <span id="resultsCount">Cargando productos...</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="view-controls">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="nombre">Ordenar por Nombre</option>
+                        <option value="precio_asc">Precio: Menor a Mayor</option>
+                        <option value="precio_desc">Precio: Mayor a Menor</option>
+                        <option value="rating">Mejor Valorados</option>
+                    </select>
+                </div>
+                
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="table" title="Vista en tabla">
+                        <img src="images/icons/listado.png" alt="Tabla" style="width: 16px; height: 16px;">
+                    </button>
+                    <button class="view-btn" data-view="grid" title="Vista en grilla">
+                        <img src="images/icons/box.png" alt="Grilla" style="width: 16px; height: 16px;">
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-table-container">
+                <div class="tabla_box">
+                    <table class="products-table" id="productsTable">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <button class="pagination-btn" id="prevBtn">« Anterior</button>
+                <div class="page-numbers" id="pageNumbers"></div>
+                <button class="pagination-btn" id="nextBtn">Siguiente »</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-component"></div>
+
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/pages/listado_producto.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/components.js"></script>
+
+</body>
+</html>

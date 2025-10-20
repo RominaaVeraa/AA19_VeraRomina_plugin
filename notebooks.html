@@ -1,0 +1,553 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebooks - Digital Point</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/notebooks.css">
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current">Notebooks</span>
+            </nav>
+        </div>
+    </div>
+
+    <section class="notebooks-hero">
+        <div class="notebooks-hero-content">
+            <div class="hero-text">
+                <h1 class="notebooks-title">
+                    <span class="title-line">NOTEBOOKS</span>
+                    <span class="title-line gradient-text">GAMING & PROFESIONALES</span>
+                </h1>
+                <p class="notebooks-subtitle">Descubre nuestra colección de laptops de alta gama. Desde gaming extremo hasta trabajo profesional.</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/Notebook/notebook1.png" alt="Notebook Gaming" class="floating-notebook">
+            </div>
+        </div>
+    </section>
+
+    <section class="filters-section">
+        <div class="container">
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Modelos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Entrega</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Garantía</span>
+                </div>
+            </div>
+
+            <div class="filters-header">
+                <h2>Filtrar por categoría</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" title="Vista en grilla">
+                        <img src="images/icons/box.png" alt="Grilla" style="width: 16px; height: 16px; filter: brightness(0) invert(1);">
+                    </button>
+                    <button class="view-btn" data-view="list" title="Vista en lista">
+                        <img src="images/icons/listado.png" alt="Lista" style="width: 16px; height: 16px; filter: brightness(0) invert(1);">
+                    </button>
+                </div>
+            </div>
+            
+            <div class="filters-container">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="Gaming">Gaming</button>
+                    <button class="filter-btn" data-category="Profesionales">Profesionales</button>
+                    <button class="filter-btn" data-category="Estudiantes">Estudiantes</button>
+                    <button class="filter-btn" data-category="Uso Diario">Uso Diario</button>
+                </div>
+                
+                <div class="sort-group">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="default">Ordenar por</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre A-Z</option>
+                        <option value="rating">Mejor Valorados</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="notebooks-grid-section">
+        <div class="container">
+            <div class="products-header">
+                <div class="results-info">
+                    <span id="resultsCount"></span>
+                </div>
+            </div>
+            
+            <div class="notebooks-grid" id="notebooksGrid">
+                <div class="notebook-card" data-category="Uso Diario" data-price="89999" data-name="MSI Modern 15 A11" data-rating="4.2">
+                    <div class="card-badges">
+                        <span class="badge value">Mejor Valor</span>
+                        <span class="badge popular">Popular</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook1.png" alt="MSI Modern 15 A11">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook1">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Modern 15 A11</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">Intel i5-1135G7</span>
+                            <span class="spec">8GB RAM</span>
+                            <span class="spec">256GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.2)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$89.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook1', 89999, 'images/Notebook/notebook1.png', 'MSI Modern 15 A11')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Gaming" data-price="124999" data-name="MSI Katana 15 B12" data-rating="4.5">
+                    <div class="card-badges">
+                        <span class="badge gaming">Gaming</span>
+                        <span class="badge popular">Popular</span>
+                        <span class="badge new">Nuevo</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook2.png" alt="MSI Katana 15 B12">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook2">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Katana 15 B12</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">AMD Ryzen 5 5600H</span>
+                            <span class="spec">16GB RAM</span>
+                            <span class="spec">512GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-text">(4.5)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$124.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook2', 124999, 'images/Notebook/notebook2.png', 'MSI Katana 15 B12')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Profesionales" data-price="149999" data-name="MSI Summit E14 Evo" data-rating="4.7">
+                    <div class="card-badges">
+                        <span class="badge premium">Premium</span>
+                        <span class="badge oficina">Oficina</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook3.png" alt="MSI Summit E14 Evo">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook3">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Summit E14 Evo</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">Intel i7-1165G7</span>
+                            <span class="spec">16GB RAM</span>
+                            <span class="spec">512GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-text">(4.7)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$149.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook3', 149999, 'images/Notebook/notebook3.png', 'MSI Summit E14 Evo')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Estudiantes" data-price="94999" data-name="MSI Modern 14 C12" data-rating="4.3">
+                    <div class="card-badges">
+                        <span class="badge value">Mejor Valor</span>
+                        <span class="badge new">Nuevo</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook4.png" alt="MSI Modern 14 C12">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook4">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Modern 14 C12</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">AMD Ryzen 7 5700U</span>
+                            <span class="spec">8GB RAM</span>
+                            <span class="spec">256GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.3)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$94.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook4', 94999, 'images/Notebook/notebook4.png', 'MSI Modern 14 C12')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Uso Diario" data-price="64999" data-name="MSI Modern 15 A12" data-rating="3.9">
+                    <div class="card-badges">
+                        <span class="badge value">Mejor Valor</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook5.png" alt="MSI Modern 15 A12">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook5">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Modern 15 A12</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">Intel i3-1115G4</span>
+                            <span class="spec">4GB RAM</span>
+                            <span class="spec">128GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(3.9)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$64.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook5', 64999, 'images/Notebook/notebook5.png', 'MSI Modern 15 A12')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Gaming" data-price="179999" data-name="MSI GF63 Thin" data-rating="4.6">
+                    <div class="card-badges">
+                        <span class="badge gaming">Gaming</span>
+                        <span class="badge premium">Premium</span>
+                        <span class="badge popular">Popular</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook6.png" alt="MSI GF63 Thin">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook6">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI GF63 Thin</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">Intel i7-11800H</span>
+                            <span class="spec">16GB RAM</span>
+                            <span class="spec">512GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-text">(4.6)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$179.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook6', 179999, 'images/Notebook/notebook6.png', 'MSI GF63 Thin')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Profesionales" data-price="249999" data-name="MSI Prestige 14 Evo" data-rating="4.8">
+                    <div class="card-badges">
+                        <span class="badge premium">Premium</span>
+                        <span class="badge flagship">Flagship</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook7.png" alt="MSI Prestige 14 Evo">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook7">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Prestige 14 Evo</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">Apple M2</span>
+                            <span class="spec">8GB RAM</span>
+                            <span class="spec">256GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-text">(4.8)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$249.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook7', 249999, 'images/Notebook/notebook7.png', 'MSI Prestige 14 Evo')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Profesionales" data-price="134999" data-name="MSI Prestige 13 Evo" data-rating="4.4">
+                    <div class="card-badges">
+                        <span class="badge premium">Premium</span>
+                        <span class="badge new">Nuevo</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook8.png" alt="MSI Prestige 13 Evo">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook8">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Prestige 13 Evo</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">Intel i5-1135G7</span>
+                            <span class="spec">8GB RAM</span>
+                            <span class="spec">256GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.4)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$134.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook8', 134999, 'images/Notebook/notebook8.png', 'MSI Prestige 13 Evo')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Uso Diario" data-price="119999" data-name="MSI Summit E13 Flip Evo" data-rating="4.3">
+                    <div class="card-badges">
+                        <span class="badge popular">Popular</span>
+                        <span class="badge value">Mejor Valor</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook9.png" alt="MSI Summit E13 Flip Evo">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook9">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Summit E13 Flip Evo</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">AMD Ryzen 5 5500U</span>
+                            <span class="spec">16GB RAM</span>
+                            <span class="spec">512GB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.3)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$119.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook9', 119999, 'images/Notebook/notebook9.png', 'MSI Summit E13 Flip Evo')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="notebook-card" data-category="Gaming" data-price="199999" data-name="MSI Pulse 15" data-rating="4.7">
+                    <div class="card-badges">
+                        <span class="badge gaming">Gaming</span>
+                        <span class="badge premium">Premium</span>
+                        <span class="badge flagship">Flagship</span>
+                    </div>
+                    <div class="notebook-image">
+                        <img src="images/Notebook/notebook10.png" alt="MSI Pulse 15">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="notebook10">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="notebook-info">
+                        <h3 class="notebook-title">MSI Pulse 15</h3>
+                        <div class="notebook-specs">
+                            <span class="spec">AMD Ryzen 7 5800H</span>
+                            <span class="spec">16GB RAM</span>
+                            <span class="spec">1TB SSD</span>
+                        </div>
+                        <div class="notebook-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                            </div>
+                            <span class="rating-text">(4.7)</span>
+                        </div>
+                        <div class="notebook-price">
+                            <span class="current-price">$199.999</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCartFromNotebooks('notebook10', 199999, 'images/Notebook/notebook10.png', 'MSI Pulse 15')">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-comparison">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration"></span>
+                ¿Qué Notebook es Para Ti?
+                <span class="title-decoration"></span>
+            </h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <img src="images/icons/mando.png" alt="Gaming">
+                    </div>
+                    <h3>Gaming</h3>
+                    <p>RTX 3050+, pantallas de alta frecuencia, cooling avanzado</p>
+                    <ul>
+                        <li>Pantallas calibradas</li>
+                        <li>Batería 8-12 horas</li>
+                        <li>Construcción premium</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <img src="images/icons/usuario-graduado.png" alt="Estudiantes">
+                    </div>
+                    <h3>Estudiantes</h3>
+                    <p>Equilibrio perfecto precio-rendimiento para todas las tareas</p>
+                    <ul>
+                        <li>Rendimiento versátil</li>
+                        <li>Precio accesible</li>
+                        <li>Portabilidad</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <img src="images/icons/diario.png" alt="Uso Diario">
+                    </div>
+                    <h3>Uso Diario</h3>
+                    <p>Perfectas para tareas cotidianas, oficina y entretenimiento</p>
+                    <ul>
+                        <li>Excelente batería</li>
+                        <li>Diseño confiable</li>
+                        <li>Precio accesible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="quick-view-content">
+            <button class="modal-close" onclick="closeQuickView()">×</button>
+            <div class="quick-view-grid">
+                <div class="quick-view-image">
+                    <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Vista rápida del producto">
+                </div>
+                <div class="quick-view-info">
+                    <h2 id="modalTitle">Título del producto</h2>
+                    <div class="modal-specs" id="modalSpecs"></div>
+                    <div class="modal-rating" id="modalRating"></div>
+                    <div class="modal-price" id="modalPrice"></div>
+                    <div class="modal-description" id="modalDescription"></div>
+                    <div class="modal-actions">
+                        <button class="modal-btn primary" onclick="addToCartFromModal()">Agregar al Carrito</button>
+                        <button class="modal-btn secondary" onclick="viewFullProduct()">Ver Detalles Completos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-component"></div>
+
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/pages/notebooks.js"></script>
+    <script src="js/pages/detalles_enrutamiento.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

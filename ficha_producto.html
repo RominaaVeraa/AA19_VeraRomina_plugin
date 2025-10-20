@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Point - Ficha de Producto</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/ficha_producto.css">
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav" aria-label="Ruta de navegación">
+                <a href="index.html">Inicio</a>
+                <span class="breadcrumb-separator">></span>
+                <a href="#" id="category-breadcrumb">Productos</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current" id="product-breadcrumb">Producto</span>
+            </nav>
+        </div>
+    </div>
+
+    <main class="product-main">
+        <div class="container">
+            <div class="product-container" id="product-container">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                            alt="Imagen del producto"
+                            id="mainProductImage"
+                            class="main-product-image">
+                        <div class="image-nav">
+                            <button class="nav-btn prev-btn" onclick="previousImage()" aria-label="Imagen anterior">‹</button>
+                            <button class="nav-btn next-btn" onclick="nextImage()" aria-label="Imagen siguiente">›</button>
+                        </div>
+                    </div>
+                    <div class="thumbnail-gallery" id="thumbnail-gallery"></div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-badges" id="product-badges"></div>
+                    <h1 class="product-title" id="product-title">Producto</h1>
+                    <div class="product-rating">
+                        <div class="stars" id="product-stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="rating-text" id="rating-text">(0/5) - 0 reseñas</span>
+                    </div>
+                    <div class="product-price" id="product-price">$0</div>
+                    <div class="product-description" id="product-description">Descripción del producto...</div>
+                    <div class="product-specs">
+                        <h3>Especificaciones Principales:</h3>
+                        <div class="specs-grid" id="specs-grid"></div>
+                    </div>
+                    <div class="quantity-section">
+                        <label for="product-quantity" class="quantity-label">Cantidad:</label>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="changeQuantity(-1)" aria-label="Disminuir cantidad">−</button>
+                            <input type="number" id="product-quantity" name="quantity" class="quantity-input" value="1" min="1" max="10" readonly aria-label="Cantidad del producto">
+                            <button class="quantity-btn" onclick="changeQuantity(1)" aria-label="Aumentar cantidad">+</button>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="add-to-cart-btn primary-btn" onclick="addToCartFromDetail()">
+                            <img src="images/icons/carrito-de-compras.png" alt="Carrito" class="btn-icon-img">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                    <div class="product-features">
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <img src="images/icons/envio.png" alt="Envío">
+                                </div>
+                                <div class="feature-text">
+                                    <strong>Envío gratis</strong>
+                                    <span>En 24-48h</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <img src="images/icons/firewall.png" alt="Devolución">
+                                </div>
+                                <div class="feature-text">
+                                    <strong>Devolución gratuita</strong>
+                                    <span>30 días</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <img src="images/icons/escudo.png" alt="Garantía">
+                                </div>
+                                <div class="feature-text">
+                                    <strong>Garantía oficial</strong>
+                                    <span>2 años</span>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <img src="images/icons/tarjeta-de-credito.png" alt="Cuotas">
+                                </div>
+                                <div class="feature-text">
+                                    <strong>12 cuotas</strong>
+                                    <span>Sin interés</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="product-details-section" id="product-details-section" aria-labelledby="product-details-title">
+                <h2 id="product-details-title" class="visually-hidden">Detalles del producto</h2>
+                <div class="details-tabs">
+                    <button class="tab-btn active" onclick="switchTab('characteristics')">Características</button>
+                    <button class="tab-btn" onclick="switchTab('specifications')">Especificaciones</button>
+                    <button class="tab-btn" onclick="switchTab('reviews')">Reseñas</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="characteristics-tab">
+                        <div class="characteristics">
+                            <h2>Características Detalladas</h2>
+                            <div class="tech-specs" id="tech-specs"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specifications-tab">
+                        <div class="specifications">
+                            <h2>Especificaciones Técnicas</h2>
+                            <div class="spec-table" id="spec-table"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="reviews-tab">
+                        <div class="reviews">
+                            <h2>Reseñas de Clientes</h2>
+                            <div class="reviews-summary">
+                                <div class="rating-overview">
+                                    <div class="overall-rating">
+                                        <span class="rating-number">4.2</span>
+                                        <div class="rating-stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="total-reviews">127 reseñas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews-list" id="reviews-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="related-products" id="related-products" style="display: none;">
+                <h2 class="section-title">
+                    <span class="title-decoration"></span>
+                    Productos Relacionados
+                    <span class="title-decoration"></span>
+                </h2>
+                <div class="related-grid" id="related-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-component"></div>
+
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/ficha_producto.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

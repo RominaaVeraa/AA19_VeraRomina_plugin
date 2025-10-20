@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Digital Point</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/login.css">
+</head>
+<body>
+    <div id="header-component"></div>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Inicio de Sesión</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="auth-container">
+
+                <div class="auth-form login-form active" id="loginForm">
+                    <div class="form-header">
+                        <h2>Iniciar Sesión</h2>
+                        <p>Si tienes una cuenta, inicia sesión con tu email.</p>
+                    </div>
+                    
+                    <form class="form" id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email *</label>
+                            <input 
+                                type="email" 
+                                id="loginEmail" 
+                                name="email" 
+                                autocomplete="email"
+                                aria-label="Correo electrónico"
+                                required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loginPassword">Contraseña *</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="loginPassword" 
+                                    name="password" 
+                                    autocomplete="current-password"
+                                    aria-label="Contraseña"
+                                    required>
+                                <button 
+                                    type="button" 
+                                    class="toggle-password" 
+                                    onclick="togglePassword('loginPassword')"
+                                    aria-label="Mostrar/ocultar contraseña">
+                                    <img src="images/icons/ojo.png" alt="Ver contraseña">
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" aria-label="Iniciar sesión">
+                            Iniciar Sesión
+                        </button>
+                    </form>
+                    
+                    <div class="form-footer">
+                        <p>¿No tienes cuenta? <button type="button" class="link-btn" onclick="switchForm('register')">Crear una cuenta</button></p>
+                    </div>
+                </div>
+
+                <div class="auth-form register-form" id="registerForm">
+                    <div class="form-header">
+                        <h2>Registrarse</h2>
+                        <p>Crea tu cuenta en Digital Point.</p>
+                    </div>
+                    
+                    <form class="form" id="registerFormElement">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nombre *</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    autocomplete="given-name"
+                                    aria-label="Nombre"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Apellido *</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    autocomplete="family-name"
+                                    aria-label="Apellido"
+                                    required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerEmail">Email *</label>
+                            <input 
+                                type="email" 
+                                id="registerEmail" 
+                                name="email" 
+                                autocomplete="email"
+                                aria-label="Correo electrónico"
+                                required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerPassword">Contraseña *</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="registerPassword" 
+                                    name="password" 
+                                    autocomplete="new-password"
+                                    aria-label="Contraseña nueva"
+                                    minlength="6"
+                                    required>
+                                <button 
+                                    type="button" 
+                                    class="toggle-password" 
+                                    onclick="togglePassword('registerPassword')"
+                                    aria-label="Mostrar/ocultar contraseña">
+                                    <img src="images/icons/ojo.png" alt="Ver contraseña">
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Contraseña *</label>
+                            <div class="password-input">
+                                <input 
+                                    type="password" 
+                                    id="confirmPassword" 
+                                    name="confirmPassword" 
+                                    autocomplete="new-password"
+                                    aria-label="Confirmar contraseña"
+                                    required>
+                                <button 
+                                    type="button" 
+                                    class="toggle-password" 
+                                    onclick="togglePassword('confirmPassword')"
+                                    aria-label="Mostrar/ocultar contraseña">
+                                    <img src="images/icons/ojo.png" alt="Ver contraseña">
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input 
+                                    type="checkbox" 
+                                    id="acceptTerms" 
+                                    name="acceptTerms"
+                                    aria-label="Aceptar términos y condiciones"
+                                    required>
+                                <span class="checkmark"></span>
+                                Acepto los <button type="button" class="link-btn" onclick="alert('Términos y condiciones de Digital Point')">términos y condiciones</button>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" aria-label="Crear cuenta">
+                            Crear una Cuenta
+                        </button>
+                    </form>
+                    
+                    <div class="form-footer">
+                        <p>¿Ya tienes cuenta? <button type="button" class="link-btn" onclick="switchForm('login')">Iniciar sesión</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-component"></div>
+
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/login.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/components.js"></script>
+</body>
+</html>

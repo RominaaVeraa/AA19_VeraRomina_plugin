@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitores - Digital Point</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages/monitores.css">
+</head>
+<body>
+
+    <div id="header-component"></div>
+
+    <section class="breadcrumb" aria-labelledby="breadcrumb-title">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Inicio</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current">Monitores</span>
+            </nav>
+        </div>
+    </section>
+
+    <section class="monitores-hero">
+        <div class="monitores-hero-content">
+            <div class="hero-text">
+                <h1 class="monitores-title">
+                    <span class="title-line">MONITORES</span>
+                    <span class="title-line gradient-text">GAMING & PROFESIONALES</span>
+                </h1>
+                <p class="monitores-subtitle">Experimenta la máxima calidad visual con nuestros monitores de última generación. Desde gaming competitivo hasta trabajo profesional.</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/Monitores/monitor0001.png" alt="Monitor Gaming" class="floating-monitor">
+            </div>
+        </div>
+    </section>
+
+    <section class="filters-section">
+        <div class="container">
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">4K</span>
+                    <span class="stat-label">Ultra HD</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">240Hz</span>
+                    <span class="stat-label">Refresh Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1ms</span>
+                    <span class="stat-label">Response Time</span>
+                </div>
+            </div>
+
+            <div class="filters-header">
+                <h2>Filtrar por categoría</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" title="Vista en grilla">
+                        <img src="images/icons/box.png" alt="Grilla" style="width: 16px; height: 16px; filter: brightness(0) invert(1);">
+                    </button>
+                    <button class="view-btn" data-view="list" title="Vista en lista">
+                        <img src="images/icons/listado.png" alt="Lista" style="width: 16px; height: 16px; filter: brightness(0) invert(1);">
+                    </button>
+                </div>
+            </div>
+            
+            <div class="filters-container">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="gaming">Gaming</button>
+                    <button class="filter-btn" data-category="oficina">Oficina</button>
+                    <button class="filter-btn" data-category="4k">4K Ultra HD</button>
+                    <button class="filter-btn" data-category="curved">Curvos</button>
+                    <button class="filter-btn" data-category="ultrawide">Ultrawide</button>
+                </div>
+                
+                <div class="sort-group">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="default">Ordenar por</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre A-Z</option>
+                        <option value="size">Tamaño</option>
+                        <option value="rating">Mejor Valorados</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="monitores-grid-section">
+        <div class="container">
+            <div class="products-header">
+                <div class="results-info">
+                    <span id="resultsCount">Mostrando todos los monitores (10)</span>
+                </div>
+            </div>
+            
+            <div class="monitores-grid" id="monitoresGrid">
+
+                <div class="monitor-card" data-category="gaming curved" data-price="89999" data-name="MSI Optix G27C7" data-rating="4.5" data-size="27">
+                    <div class="card-badges">
+                        <span class="badge gaming">Gaming</span>
+                        <span class="badge curved">Curvo</span>
+                        <span class="badge popular">Popular</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor1.png" alt="MSI Optix G27C7">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor1">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI Optix G27C7 27" 240Hz QHD Curvo</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">27"</span>
+                            <span class="spec">240Hz</span>
+                            <span class="spec">1ms</span>
+                            <span class="spec">QHD</span>
+                            <span class="spec">Curvo</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star half">★</span>
+                            </div>
+                            <span class="rating-text">(4.5)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$89.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI Optix G27C7', '$89.999', 'images/Monitores/monitor1.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="oficina ultrawide curved" data-price="124999" data-name="MSI Optix MAG342CQR" data-rating="4.3" data-size="34">
+                    <div class="card-badges">
+                        <span class="badge ultrawide">Ultrawide</span>
+                        <span class="badge curved">Curvo</span>
+                        <span class="badge oficina">Oficina</span>
+                        <span class="badge value">Mejor Valor</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor2.png" alt="MSI Optix MAG342CQR">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor2">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI Optix MAG342CQR 34" 75Hz IPS USB-C Curvo</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">34"</span>
+                            <span class="spec">75Hz</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">USB-C</span>
+                            <span class="spec">Ultrawide</span>
+                            <span class="spec">Curvo</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.3)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$124.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI Optix MAG342CQR', '$124.999', 'images/Monitores/monitor2.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="gaming curved" data-price="149999" data-name="MSI Optix PG27C" data-rating="4.7" data-size="27">
+                    <div class="card-badges">
+                        <span class="badge gaming">Gaming</span>
+                        <span class="badge curved">Curvo</span>
+                        <span class="badge premium">Premium</span>
+                        <span class="badge flagship">Flagship</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor3.png" alt="MSI Optix PG27C">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor3">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI Optix PG27C 27" 165Hz Curvo G-Sync Compatible</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">27"</span>
+                            <span class="spec">165Hz</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">Curvo</span>
+                            <span class="spec">G-Sync Compatible</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star half">★</span>
+                            </div>
+                            <span class="rating-text">(4.7)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$149.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI Optix PG27C', '$149.999', 'images/Monitores/monitor3.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="4k oficina" data-price="179999" data-name="MSI Modern MD272Q" data-rating="4.6" data-size="27">
+                    <div class="card-badges">
+                        <span class="badge k">4K Ultra HD</span>
+                        <span class="badge premium">Premium</span>
+                        <span class="badge oficina">Oficina</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor4.png" alt="MSI Modern MD272Q">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor4">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI Modern MD272Q 27" 4K IPS USB-C</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">27"</span>
+                            <span class="spec">4K UHD</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">USB-C</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star half">★</span>
+                            </div>
+                            <span class="rating-text">(4.6)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$179.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI Modern MD272Q', '$179.999', 'images/Monitores/monitor4.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="gaming curved" data-price="64999" data-name="MSI G24C4" data-rating="4.2" data-size="24">
+                    <div class="card-badges">
+                        <span class="badge gaming">Gaming</span>
+                        <span class="badge curved">Curvo</span>
+                        <span class="badge value">Mejor Valor</span>
+                        <span class="badge popular">Popular</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor5.png" alt="MSI G24C4">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor5">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI G24C4 24" 144Hz IPS Gaming Curvo</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">24"</span>
+                            <span class="spec">144Hz</span>
+                            <span class="spec">1ms</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">Curvo</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.2)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$64.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI G24C4', '$64.999', 'images/Monitores/monitor5.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="4k oficina" data-price="199999" data-name="MSI Creator PS321URV" data-rating="4.8" data-size="32">
+                    <div class="card-badges">
+                        <span class="badge k">4K Ultra HD</span>
+                        <span class="badge premium">Premium</span>
+                        <span class="badge flagship">Flagship</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor6.png" alt="MSI Creator PS321URV">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor6">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI Creator PS321URV 32" 4K Professional IPS</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">32"</span>
+                            <span class="spec">4K UHD</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">Diseño</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+                            </div>
+                            <span class="rating-text">(4.8)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$199.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI Creator PS321URV', '$199.999', 'images/Monitores/monitor6.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="curved ultrawide gaming" data-price="134999" data-name="MSI Optix MAG341CQ" data-rating="4.4" data-size="34">
+                    <div class="card-badges">
+                        <span class="badge curved">Curvo</span>
+                        <span class="badge ultrawide">Ultrawide</span>
+                        <span class="badge gaming">Gaming</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor7.png" alt="MSI Optix MAG341CQ">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor7">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI Optix MAG341CQ 34" Ultrawide Curvo</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">34"</span>
+                            <span class="spec">100Hz</span>
+                            <span class="spec">Curvo</span>
+                            <span class="spec">UWQHD</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.4)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$134.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI Optix MAG341CQ', '$134.999', 'images/Monitores/monitor7.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="oficina curved" data-price="54999" data-name="MSI PRO MP241C" data-rating="4.1" data-size="24">
+                    <div class="card-badges">
+                        <span class="badge oficina">Oficina</span>
+                        <span class="badge curved">Curvo</span>
+                        <span class="badge value">Mejor Valor</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor8.png" alt="MSI PRO MP241C">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor8">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI PRO MP241C 24" Empresarial IPS Curvo</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">24"</span>
+                            <span class="spec">60Hz</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">Full HD</span>
+                            <span class="spec">Curvo</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.1)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$54.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI PRO MP241C', '$54.999', 'images/Monitores/monitor8.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="gaming curved" data-price="94999" data-name="MSI G27CQ4" data-rating="4.4" data-size="27">
+                    <div class="card-badges">
+                        <span class="badge gaming">Gaming</span>
+                        <span class="badge curved">Curvo</span>
+                        <span class="badge value">Mejor Valor</span>
+                        <span class="badge popular">Popular</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor9.png" alt="MSI G27CQ4">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor9">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI G27CQ4 27" 170Hz QHD KVM Curvo</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">27"</span>
+                            <span class="spec">170Hz</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">QHD</span>
+                            <span class="spec">Curvo</span>
+                            <span class="spec">KVM</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.4)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$94.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI G27CQ4', '$94.999', 'images/Monitores/monitor9.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <div class="monitor-card" data-category="4k oficina" data-price="89999" data-name="MSI Modern MD271QP" data-rating="4.0" data-size="27">
+                    <div class="card-badges">
+                        <span class="badge k">4K Ultra HD</span>
+                        <span class="badge value">Mejor Valor</span>
+                    </div>
+                    <div class="monitor-image">
+                        <img src="images/Monitores/monitor10.png" alt="MSI Modern MD271QP">
+                        <div class="image-overlay">
+                            <button class="quick-view-btn" data-product="monitor10">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="monitor-info">
+                        <h3 class="monitor-title">MSI Modern MD271QP 27" 4K IPS Entry</h3>
+                        <div class="monitor-specs">
+                            <span class="spec">27"</span>
+                            <span class="spec">4K UHD</span>
+                            <span class="spec">IPS</span>
+                            <span class="spec">60Hz</span>
+                        </div>
+                        <div class="monitor-rating">
+                            <div class="stars">
+                                <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
+                            </div>
+                            <span class="rating-text">(4.0)</span>
+                        </div>
+                        <div class="monitor-price"><span class="current-price">$89.999</span></div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MSI Modern MD271QP', '$89.999', 'images/Monitores/monitor10.png')">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-comparison">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration"></span>
+                ¿Qué Monitor es Para Ti?
+                <span class="title-decoration"></span>
+            </h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <img src="images/icons/mando.png" alt="Gaming">
+                    </div>
+                    <h3>Gaming</h3>
+                    <p>Alta frecuencia de actualización, tiempo de respuesta mínimo</p>
+                    <ul>
+                        <li>144Hz - 240Hz</li>
+                        <li>1ms response time</li>
+                        <li>FreeSync/G-Sync</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <img src="images/icons/virtual.png" alt="Oficina">
+                    </div>
+                    <h3>Oficina</h3>
+                    <p>Comodidad visual, colores precisos, diseño profesional</p>
+                    <ul>
+                        <li>Panel IPS</li>
+                        <li>Filtro luz azul</li>
+                        <li>Ajustes ergonómicos</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <img src="images/icons/4k.png" alt="4K Ultra HD">
+                    </div>
+                    <h3>4K Ultra HD</h3>
+                    <p>Máxima resolución para diseño y contenido multimedia</p>
+                    <ul>
+                        <li>Resolución 3840x2160</li>
+                        <li>100% sRGB</li>
+                        <li>HDR compatible</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">
+                        <img src="images/icons/pantalla-curva.png" alt="Curvos">
+                    </div>
+                    <h3>Curvos</h3>
+                    <p>Experiencia inmersiva, menos fatiga visual</p>
+                    <ul>
+                        <li>Curvatura 1800R</li>
+                        <li>Campo visual amplio</li>
+                        <li>Experiencia inmersiva</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="quickViewModal" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
+        <div class="quick-view-content">
+            <button class="modal-close" onclick="closeQuickView()">×</button>
+            <div class="quick-view-grid">
+                <div class="quick-view-image">
+                    <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Imagen del producto">
+                </div>
+                <div class="quick-view-info">
+                    <h2 id="modalTitle">Detalle del monitor</h2>
+                    <div class="modal-specs" id="modalSpecs"></div>
+                    <div class="modal-rating" id="modalRating"></div>
+                    <div class="modal-price" id="modalPrice"></div>
+                    <div class="modal-description" id="modalDescription"></div>
+                    <div class="modal-actions">
+                        <button class="modal-btn primary" onclick="addToCartFromModal()">Agregar al Carrito</button>
+                        <button class="modal-btn secondary" onclick="viewFullProduct()">Ver Detalles Completos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-component"></div>
+    
+    <script src="js/pages/common_cart.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/pages/productos_data.js"></script>
+    <script src="js/pages/index.js"></script>
+    <script src="js/pages/monitores.js"></script>
+    <script src="js/pages/detalles_enrutamiento.js"></script>
+    <script src="js/pages/comprar.js"></script>
+    <script src="js/components.js"></script> 
+</body>
+</html>
