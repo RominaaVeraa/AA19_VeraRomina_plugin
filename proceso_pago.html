@@ -6,15 +6,6 @@
     <title>Proceso de Pago - Digital Point</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/pages/proceso_pago.css">
-    <style>
-        .payment-label {
-          position: absolute !important;
-          width: 1px; height: 1px;
-          padding: 0; margin: -1px;
-          overflow: hidden; clip: rect(0,0,0,0);
-          white-space: nowrap; border: 0;
-        }
-    </style>
 </head>
 <body>
     <div id="header-component"></div>
@@ -69,6 +60,7 @@
                             Método de Pago
                         </h2>
                         <div class="payment-methods">
+                            <!-- Tarjeta -->
                             <div class="payment-method">
                                 <input 
                                     type="radio" 
@@ -156,6 +148,7 @@
                                 </div>
                             </div>
 
+                            <!-- Transferencia -->
                             <div class="payment-method">
                                 <input 
                                     type="radio" 
@@ -226,6 +219,7 @@
                                 </div>
                             </div>
 
+                            <!-- Efectivo -->
                             <div class="payment-method">
                                 <input 
                                     type="radio" 
@@ -281,7 +275,6 @@
                             <img src="images/icons/envio.png" alt="Envío" class="section-icon">
                             Información de Envío
                         </h2>
-                        
                         <div id="shippingInfoDetails" role="region" aria-label="Información de envío"></div>
                     </div>
                 </div>
@@ -407,22 +400,20 @@
 
     <div id="toastContainer" class="toast-container" role="region" aria-live="polite"></div>
 
-    <script>
-      document.querySelectorAll('.payment-content[data-for]').forEach(box => {
-        box.addEventListener('click', () => {
-          const id = box.getAttribute('data-for');
-          const radio = document.getElementById(id);
-          if (radio) {
-            radio.checked = true;
-            radio.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-        });
-      });
-    </script>
+    <!-- Librerías -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/localization/messages_es.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.9/dist/inputmask.min.js"></script>
+
+    <!-- Core y dependencias -->
     <script src="js/pages/common_cart.js"></script>
     <script src="js/global.js"></script>
     <script src="js/pages/productos_data.js"></script>
+
+    <!-- Proceso de Pago (JS separado) -->
     <script src="js/pages/proceso_pago.js"></script>
+
     <script src="js/components.js"></script>
 </body>
 </html>

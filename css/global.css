@@ -1091,3 +1091,6 @@ body {
 .mobile-menu-toggle {
     transition: none !important;
 }
+
+.input-error { outline: 2px solid #e55353; }
+.texto-error, label.error { color:#e55353; display:block; margin-top:4px; font-size:.9rem; }

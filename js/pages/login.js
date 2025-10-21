@@ -434,3 +434,33 @@ window.updateHeaderProfile = updateHeaderProfileLegacy;
 window.getCurrentUser = getCurrentUser;
 window.viewOrderDetails = viewOrderDetails;
 window.loadUserOrders = loadUserOrders;
+
+// --- Validación Login/Register ---
+$(function(){
+  const $login = $('#loginFormElement');
+  if ($login.length) {
+    $login.validate({
+      errorElement: "small",
+      errorClass: "texto-error",
+      submitHandler: function(form){ handleLogin({preventDefault(){}}); }
+    });
+  }
+
+  const $reg = $('#registerFormElement');
+  if ($reg.length) {
+    $reg.validate({
+      errorElement: "small",
+      errorClass: "texto-error",
+      rules: {
+        registerPassword: { minlength: 6 },
+        confirmPassword:  { equalTo: '#registerPassword' },
+        acceptTerms:      { required: true }
+      },
+      messages: {
+        acceptTerms: "Debes aceptar los términos y condiciones",
+        confirmPassword: "Las contraseñas no coinciden"
+      },
+      submitHandler: function(form){ handleRegister({preventDefault(){}}); }
+    });
+  }
+});

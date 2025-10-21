@@ -455,3 +455,40 @@ window.ContactPage = {
 };
 
 console.log('Página de contacto inicializada correctamente');
+
+// --- jQuery Validation + Inputmask (CONTACTO) ---
+$(function(){
+  if (!$('#contactForm').length) return;
+
+  // Máscara teléfono
+  try { Inputmask({ mask: "+54 9 9999-999999" }).mask('#phone'); } catch(e){}
+
+  // Validación
+  $('#contactForm').validate({
+    errorElement: "small",
+    errorClass: "texto-error",
+    highlight:   el => el.classList.add("input-error"),
+    unhighlight: el => el.classList.remove("input-error"),
+    rules: {
+      firstName: { required: true, minlength: 2 },
+      lastName:  { required: true, minlength: 2 },
+      email:     { required: true, email: true },
+      subject:   { required: true },
+      message:   { required: true, maxlength: 500 },
+      privacy:   { required: true }
+    },
+    messages: {
+      privacy: "Debes aceptar la política de privacidad"
+    },
+    submitHandler: function(form){
+      // dejamos tu flujo actual:
+      form.dispatchEvent(new Event('submitVanilla',{bubbles:true}));
+      return false;
+    }
+  });
+
+  // puente: dispara tu submit actual sin duplicar lógica
+  document.getElementById('contactForm').addEventListener('submitVanilla', function(e){
+    submitForm(); // tu función actual
+  });
+});

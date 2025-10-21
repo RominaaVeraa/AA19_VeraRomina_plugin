@@ -465,4 +465,54 @@ function cleanup() {
   localStorage.setItem('lastVisit', Date.now());
 }
 
+// --- Slick init (hero + reseñas) ---
+(function initSlickHome(){
+  if (!window.jQuery || !$.fn.slick) return;
+
+  // 1) HERO (reemplaza el setInterval manual)
+  const $hero = $('.hero-slider');
+  if ($hero.length) {
+    try {
+      $hero.slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 400,
+        arrows: true,
+        dots: true,
+        fade: true,
+        pauseOnHover: true
+      });
+      // Desactiva tu rotador manual
+      isAutoSliding = false;
+    } catch(e){}
+  }
+
+  // 2) RESEÑAS
+  const $reviews = $('.review-slider');
+  if ($reviews.length) {
+    try {
+      $reviews.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        appendDots: $('.review-dots'),
+        autoplay: true,
+        autoplaySpeed: 2000
+      });
+
+      // Vincula tus botones ya existentes
+      $('.review-prev').on('click', e => { e.preventDefault(); $reviews.slick('slickPrev'); });
+      $('.review-next').on('click', e => { e.preventDefault(); $reviews.slick('slickNext'); });
+
+      // Evita que se creen dots manuales
+      const dotsContainer = document.querySelector('.review-dots');
+      if (dotsContainer) dotsContainer.innerHTML = '';
+      // Apaga tu autoSlide manual
+      clearInterval(reviewAutoSlideInterval);
+    } catch(e){}
+  }
+})();
+
+
 window.addEventListener('beforeunload', cleanup);

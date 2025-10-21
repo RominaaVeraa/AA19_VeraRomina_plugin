@@ -356,3 +356,35 @@ window.addEventListener('storage', (e) => {
     renderOrderSummary();
   }
 });
+
+// --- Máscaras + validación (CHECKOUT) ---
+$(function(){
+  // Máscaras
+  try {
+    Inputmask({ mask: "9999" }).mask('#postalCode');
+    Inputmask({ mask: "+54 9 9999-999999" }).mask('#phone');
+  } catch(e){}
+
+  // Validación mínima (los readonly no molestan)
+  const $f = $('#checkoutForm');
+  if (!$f.length) return;
+
+  $f.validate({
+    errorElement: "small",
+    errorClass: "texto-error",
+    highlight:   el => el.classList.add("input-error"),
+    unhighlight: el => el.classList.remove("input-error"),
+    submitHandler: function(form){
+      // dejar tu flujo actual
+      form.dispatchEvent(new Event('submitVanilla',{bubbles:true}));
+      return false;
+    }
+  });
+
+  document.getElementById('checkoutForm').addEventListener('submitVanilla', function(e){
+    // tu lógica actual
+    const evt = new Event('submit',{bubbles:true});
+    // Evitamos recursión: llamamos directamente a setupFormSubmit handler propio:
+    // ya estás capturando submit en setupFormSubmit(); no hace falta nada más
+  });
+});

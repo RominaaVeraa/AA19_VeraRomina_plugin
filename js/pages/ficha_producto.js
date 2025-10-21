@@ -419,3 +419,30 @@ window.addToCartFromDetail = addToCartFromDetail;
 window.buyNow = buyNow;
 window.switchTab = switchTab;
 window.goToProduct = goToProduct;
+
+// --- Lightbox wiring (si está cargado) ---
+(function enableLightboxOnProduct(){
+  if (!window.lightbox) return;
+  // Re-render cada vez que cambian imágenes
+  const _displayImages = displayImages;
+  displayImages = function(images){
+    _displayImages(images);
+    try {
+      const main = document.getElementById('mainProductImage');
+      const wrapMain = document.createElement('a');
+      wrapMain.href = images[ currentImageIndex || 0 ] || main.src;
+      wrapMain.setAttribute('data-lightbox','galeria');
+      main.parentNode.insertBefore(wrapMain, main);
+      wrapMain.appendChild(main);
+
+      const gal = document.getElementById('thumbnail-gallery');
+      gal.querySelectorAll('img').forEach((im, i)=>{
+        const a = document.createElement('a');
+        a.href = images[i];
+        a.setAttribute('data-lightbox','galeria');
+        im.parentNode.insertBefore(a, im);
+        a.appendChild(im);
+      });
+    } catch(e){}
+  }
+})();
