@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initializeHeroSlider() {
   if (totalSlides <= 1) return;
-  
   const heroSection = document.querySelector('.hero');
   if (heroSection) {
     heroSection.addEventListener('mouseenter', () => (isAutoSliding = false));
@@ -35,17 +34,12 @@ function initializeHeroSlider() {
 
 function nextSlide() {
   const currentElement = slides[currentSlide];
-  
   currentElement?.classList.add('fading-out');
-  
   const nextSlideIndex = (currentSlide + 1) % totalSlides;
   const nextElement = slides[nextSlideIndex];
-  
   setTimeout(() => {
     currentElement?.classList.remove('active', 'fading-out');
-    
     currentSlide = nextSlideIndex;
-    
     nextElement?.classList.add('active');
   }, 400);
 }
@@ -53,7 +47,7 @@ function nextSlide() {
 function startAutoSlider() {
   setInterval(() => {
     if (isAutoSliding && totalSlides > 1) nextSlide();
-  }, 2000); 
+  }, 2000);
 }
 
 function initializeReviewSlider() {
@@ -61,9 +55,7 @@ function initializeReviewSlider() {
   const dotsContainer = document.querySelector('.review-dots');
   const prevBtn = document.querySelector('.review-prev');
   const nextBtn = document.querySelector('.review-next');
-  
   if (!reviews.length || !dotsContainer) return;
-  
   reviews.forEach((_, index) => {
     const dot = document.createElement('div');
     dot.className = `review-dot ${index === 0 ? 'active' : ''}`;
@@ -73,22 +65,20 @@ function initializeReviewSlider() {
     });
     dotsContainer.appendChild(dot);
   });
-  
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const reviews = document.querySelectorAll('.review-content');
-      const prevIndex = currentReview === 0 ? reviews.length - 1 : currentReview - 1;
+      const items = document.querySelectorAll('.review-content');
+      const prevIndex = currentReview === 0 ? items.length - 1 : currentReview - 1;
       goToReview(prevIndex);
       resetAutoSlide();
     });
   }
-  
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const reviews = document.querySelectorAll('.review-content');
-      const nextIndex = (currentReview + 1) % reviews.length;
+      const items = document.querySelectorAll('.review-content');
+      const nextIndex = (currentReview + 1) % items.length;
       goToReview(nextIndex);
       resetAutoSlide();
     });
@@ -98,15 +88,11 @@ function initializeReviewSlider() {
 function goToReview(index) {
   const reviews = document.querySelectorAll('.review-content');
   const dots = document.querySelectorAll('.review-dot');
-  
   if (!reviews[index]) return;
-  
   reviews.forEach(r => r.classList.remove('active-review'));
   dots.forEach(d => d.classList.remove('active'));
-  
   reviews[index].classList.add('active-review');
   dots[index]?.classList.add('active');
-  
   currentReview = index;
 }
 
@@ -128,7 +114,6 @@ function startReviewAutoSlide() {
 
 function initializeScrollEffects() {
   const header = document.querySelector('.header');
-
   window.addEventListener('scroll', () => {
     const y = window.pageYOffset || document.documentElement.scrollTop;
     header?.classList.toggle('scrolled', y > 100);
@@ -140,7 +125,6 @@ function initializeHeaderEffects() {
   const searchContainer = document.querySelector('.search-container-inline');
   const searchBtnOpen = document.querySelector('.search-btn-open');
   const searchBtnClose = document.querySelector('.search-btn-close');
-
   if (searchBtnOpen && searchContainer) {
     searchBtnOpen.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -149,14 +133,12 @@ function initializeHeaderEffects() {
       setTimeout(() => searchInput?.focus(), 100);
     });
   }
-
   if (searchBtnClose && searchContainer) {
     searchBtnClose.addEventListener('click', (e) => {
       e.stopPropagation();
       closeSearch();
     });
   }
-
   if (searchInput) {
     searchInput.addEventListener('keypress', e => {
       if (e.key === 'Enter' && e.target.value.trim()) {
@@ -165,7 +147,6 @@ function initializeHeaderEffects() {
       }
     });
   }
-
   document.addEventListener('click', (e) => {
     if (searchContainer?.classList.contains('active') &&
         !searchContainer.contains(e.target) &&
@@ -173,13 +154,11 @@ function initializeHeaderEffects() {
       closeSearch();
     }
   });
-
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && searchContainer?.classList.contains('active')) {
       closeSearch();
     }
   });
-
   function closeSearch() {
     searchContainer?.classList.remove('active');
     searchBtnOpen?.classList.remove('hidden');
@@ -191,15 +170,12 @@ function initializeMobileMenu() {
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const navigation = document.querySelector('.navigation');
   const navLinks = document.querySelectorAll('.nav-link');
-  
   if (!menuToggle || !navigation) return;
-  
   menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
     navigation.classList.toggle('active');
     document.body.style.overflow = navigation.classList.contains('active') ? 'hidden' : '';
   });
-  
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       menuToggle.classList.remove('active');
@@ -207,17 +183,15 @@ function initializeMobileMenu() {
       document.body.style.overflow = '';
     });
   });
-  
   document.addEventListener('click', (e) => {
-    if (navigation.classList.contains('active') && 
-        !navigation.contains(e.target) && 
+    if (navigation.classList.contains('active') &&
+        !navigation.contains(e.target) &&
         !menuToggle.contains(e.target)) {
       menuToggle.classList.remove('active');
       navigation.classList.remove('active');
       document.body.style.overflow = '';
     }
   });
-  
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && navigation.classList.contains('active')) {
       menuToggle.classList.remove('active');
@@ -229,7 +203,6 @@ function initializeMobileMenu() {
 
 function initializeProductCards() {
   const cards = document.querySelectorAll('.product-card');
-
   cards.forEach(card => {
     card.addEventListener('mousemove', function (e) {
       if (window.innerWidth <= 768) return;
@@ -240,11 +213,9 @@ function initializeProductCards() {
       const rotateY = (rect.width / 2 - x) / 10;
       this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
     });
-    
     card.addEventListener('mouseleave', function () {
       this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
     });
-
     const img = card.querySelector('.product-image img');
     if (img) {
       img.addEventListener('load', function () {
@@ -257,7 +228,6 @@ function initializeProductCards() {
 
 function addToCart(productId, price, image, name) {
   const existing = cartItems.find(i => i.id === productId);
-  
   if (existing) {
     existing.quantity += 1;
     showNotification(`${name} - Cantidad actualizada en el carrito`);
@@ -271,7 +241,6 @@ function addToCart(productId, price, image, name) {
     });
     showNotification(`${name} agregado al carrito`, 'success');
   }
-  
   updateCartIcon();
   saveCartToStorage();
   animateCartIcon();
@@ -280,7 +249,6 @@ function addToCart(productId, price, image, name) {
 function updateCartIcon() {
   const cartCount = document.querySelector('.cart-count');
   const total = cartItems.reduce((sum, i) => sum + i.quantity, 0);
-  
   if (cartCount) {
     cartCount.textContent = total;
     if (total > 0) {
@@ -294,7 +262,6 @@ function updateCartIcon() {
 function animateCartIcon() {
   const cartBtn = document.querySelector('.cart-btn');
   if (!cartBtn) return;
-  
   cartBtn.style.transform = 'scale(1.2) rotate(10deg)';
   setTimeout(() => (cartBtn.style.transform = 'scale(1) rotate(0deg)'), 300);
 }
@@ -307,45 +274,34 @@ function initializeNewsletter() {
   const form = document.getElementById('newsletter-form');
   const input = document.getElementById('newsletter-email');
   const btn = form?.querySelector('.newsletter-btn');
-  
   if (!form) return;
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = input.value.trim();
-    
     if (!email) {
       return showNotification('Por favor ingresa tu email', 'error');
     }
-    
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return showNotification('Por favor ingresa un email válido', 'error');
     }
-
     if (btn) {
       btn.disabled = true;
       btn.textContent = 'Enviando...';
     }
-    
     try {
       const formData = new FormData();
       formData.append('email', email);
       formData.append('_subject', 'Nueva suscripción a Newsletter - Digital Point');
       formData.append('_template', 'table');
       formData.append('_captcha', 'false');
-      
       const response = await fetch('https://formsubmit.co/tienda_digitalpoint@gmail.com', {
         method: 'POST',
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { Accept: 'application/json' }
       });
-      
       if (response.ok) {
         showNotification('¡Gracias por suscribirte! Recibirás nuestras mejores ofertas.', 'success');
         input.value = '';
-        
         const subscribed = JSON.parse(localStorage.getItem('subscribedEmails') || '[]');
         if (!subscribed.includes(email)) {
           subscribed.push(email);
@@ -355,24 +311,18 @@ function initializeNewsletter() {
         throw new Error('Error en el envío');
       }
     } catch (error) {
-      console.error('Error al enviar:', error);
-      
       const subject = encodeURIComponent('Nueva suscripción a Newsletter');
       const body = encodeURIComponent(`Email suscrito: ${email}\nFecha: ${new Date().toLocaleString()}`);
       const mailtoLink = `mailto:tienda_digitalpoint@gmail.com?subject=${subject}&body=${body}`;
-      
       showNotification('Por favor, confirma tu suscripción manualmente', 'info');
-      
       setTimeout(() => {
         window.location.href = mailtoLink;
       }, 1000);
-      
       const subscribed = JSON.parse(localStorage.getItem('subscribedEmails') || '[]');
       if (!subscribed.includes(email)) {
         subscribed.push(email);
         localStorage.setItem('subscribedEmails', JSON.stringify(subscribed));
       }
-      
       input.value = '';
     } finally {
       if (btn) {
@@ -385,24 +335,16 @@ function initializeNewsletter() {
 
 function showNotification(message, type = 'info') {
   const toastContainer = document.getElementById('toastContainer');
-  
-  if (!toastContainer) {
-    console.warn('Toast container no encontrado');
-    return;
-  }
-  
+  if (!toastContainer) return;
   const toast = document.createElement('div');
   toast.className = `toast ${type}`;
   toast.textContent = message;
   toastContainer.appendChild(toast);
-  
   setTimeout(() => toast.classList.add('show'), 50);
-  
   setTimeout(() => {
     toast.classList.remove('show');
     setTimeout(() => toast.remove(), 300);
   }, 4000);
-  
   const toasts = toastContainer.querySelectorAll('.toast');
   if (toasts.length > 3) {
     const oldest = toasts[0];
@@ -415,18 +357,13 @@ function initializeAnimationObserver() {
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('animate');
       });
     },
     { threshold: 0.1, rootMargin: '50px' }
   );
-  
   document
-    .querySelectorAll(
-      '.section-title, .category-card, .product-card, .feature-card, .review-content, .newsletter-content, .footer-section'
-    )
+    .querySelectorAll('.section-title, .category-card, .product-card, .feature-card, .review-content, .newsletter-content, .footer-section')
     .forEach(el => observer.observe(el));
 }
 
@@ -436,7 +373,6 @@ function initializeSmoothScroll() {
       e.preventDefault();
       const target = document.querySelector(a.getAttribute('href'));
       if (!target) return;
-      
       const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
       const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
       window.scrollTo({ top, behavior: 'smooth' });
@@ -465,11 +401,8 @@ function cleanup() {
   localStorage.setItem('lastVisit', Date.now());
 }
 
-// --- Slick init (hero + reseñas) ---
 (function initSlickHome(){
   if (!window.jQuery || !$.fn.slick) return;
-
-  // 1) HERO (reemplaza el setInterval manual)
   const $hero = $('.hero-slider');
   if ($hero.length) {
     try {
@@ -482,12 +415,10 @@ function cleanup() {
         fade: true,
         pauseOnHover: true
       });
-      // Desactiva tu rotador manual
+      document.querySelector('.hero')?.classList.add('use-slick');
       isAutoSliding = false;
     } catch(e){}
   }
-
-  // 2) RESEÑAS
   const $reviews = $('.review-slider');
   if ($reviews.length) {
     try {
@@ -498,21 +429,17 @@ function cleanup() {
         dots: true,
         appendDots: $('.review-dots'),
         autoplay: true,
-        autoplaySpeed: 2000
+        autoplaySpeed: 2000,
+        adaptiveHeight: true
       });
-
-      // Vincula tus botones ya existentes
+      document.querySelector('.reviews')?.classList.add('use-slick');
       $('.review-prev').on('click', e => { e.preventDefault(); $reviews.slick('slickPrev'); });
       $('.review-next').on('click', e => { e.preventDefault(); $reviews.slick('slickNext'); });
-
-      // Evita que se creen dots manuales
       const dotsContainer = document.querySelector('.review-dots');
       if (dotsContainer) dotsContainer.innerHTML = '';
-      // Apaga tu autoSlide manual
       clearInterval(reviewAutoSlideInterval);
     } catch(e){}
   }
 })();
-
 
 window.addEventListener('beforeunload', cleanup);
